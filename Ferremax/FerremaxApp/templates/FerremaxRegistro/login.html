@@ -1,0 +1,28 @@
+{% extends 'FerremaxWeb/index.html' %}
+{% load static %}
+
+{% block tittle %} Iniciar Sesion {% endblock %}
+
+{% block body %}
+<div class="container" style="margin-bottom: 0px; margin-top: 0px; width: 5000px; height: 1000px;">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" class="form-login">
+              <h2 class="text-center">Iniciar sesión</h2>
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="dropdown">
+              </div>
+              <input type="hidden" id="selectedUserType" name="selectedUserType" value="">
+              <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+              <h6>¿No tienes cuenta? Registrate aquí</h6>
+              <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
